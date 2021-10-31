@@ -220,12 +220,7 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
 
 # IFAA manager
-PRODUCT_PACKAGES += \
-    IFAAService \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
+-include vendor/xiaomi/sm6150-common-extra/ifaa.mk
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -405,8 +400,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.vendor \
     libwfdaac_vendor
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+# WfdCommon
+-include vendor/xiaomi/sm6150-common-extra/wfd.mk
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/sm6150-common/sm6150-common-vendor.mk)
